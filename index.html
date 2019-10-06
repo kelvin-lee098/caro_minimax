@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+		Tic Tac Toe with Minimax AI Algorithm
+		Author: Clederson Cruz
+		Year: 2017
+		License: GNU GENERAL PUBLIC LICENSE (GPL)
+		-->
+
+		<meta charset="UTF-8" />
+		<meta content="Clederson Cruz" name="author" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link type="text/css" rel="stylesheet" href="web_version/style.css" />
+		<script type="text/javascript" src="web_version/script.js"></script>
+		<title>Jogo da Velha - Minimax</title>
+	</head>
+	<body>
+		<header>
+			<p>Minimax Algorithm</p>
+		</header>
+			<br />
+			<p id="message"></p>
+			<br />
+			<button onclick="myCreateFunction()">Create</button>
+		<table id="tab-tic-tac-toe" cellspacing="0">
+		</table>
+		<br><br>
+		<input type="button" value="Start AI" id="bnt-restart" onclick="restartBnt(this)"/>
+		<br />
+		<footer>
+			<p>Read more on: <a href="https://github.com/Cledersonbc/tic-tac-toe-minimax/blob/master/README.md">Github</a></p>
+		</footer>
+	</body>
+	<script type="text/javascript">
+		function myCreateFunction() {
+			var table = document.getElementById("tab-tic-tac-toe")
+			for(let i = 0; i < 20; i++){	
+				var row = table.insertRow(i)
+				for( let j = 0; j < 20; j++){
+					var cell = row.insertCell(j)
+					cell.id = (i.toString() +" "+ j.toString())
+					cell.setAttribute('onclick', 'clickedCell(this)');
+				}
+			};
+		}
+	</script>
+</html>
